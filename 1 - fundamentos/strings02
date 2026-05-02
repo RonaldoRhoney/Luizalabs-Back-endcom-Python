@@ -1,0 +1,114 @@
+"""
+Script: interpolacao_strings.py
+Descrição:
+Demonstra diferentes formas de interpolação de variáveis em Python,
+incluindo métodos modernos e antigos (alguns em desuso).
+
+Autor: Ronaldo Rhoney (exemplo)
+"""
+
+# ==============================
+# Variáveis de exemplo
+# ==============================
+nome = "Ronaldo"
+idade = 25
+altura = 1.75
+
+# ==============================
+# 1. f-strings (RECOMENDADO - moderno e mais usado)
+# ==============================
+# Introduzido no Python 3.6
+# É a forma mais rápida, legível e poderosa atualmente
+
+print("\n--- f-strings ---")
+print(f"Nome: {nome}, Idade: {idade}, Altura: {altura}")
+
+# Permite expressões dentro das chaves
+print(f"Ano de nascimento aproximado: {2026 - idade}")
+
+# Formatação de números
+print(f"Altura formatada: {altura:.2f}")  # 2 casas decimais
+
+# ==============================
+# 2. Método format() (ainda muito usado)
+# ==============================
+# Funciona em versões mais antigas do Python
+
+print("\n--- format() ---")
+print("Nome: {}, Idade: {}, Altura: {}".format(nome, idade, altura))
+
+# Com índice
+print("Nome: {0}, Idade: {1}".format(nome, idade))
+
+# Com nomes (mais legível)
+print("Nome: {n}, Idade: {i}".format(n=nome, i=idade))
+
+# Formatação de números
+print("Altura formatada: {:.2f}".format(altura))
+
+# ==============================
+# 3. Operador % (ANTIGO / EM DESUSO ⚠️)
+# ==============================
+# Era muito usado em versões antigas do Python
+# Hoje NÃO é recomendado para novos códigos
+
+print("\n--- % (desuso) ---")
+print("Nome: %s, Idade: %d, Altura: %.2f" % (nome, idade, altura))
+
+# Problemas:
+# - Menos legível
+# - Menos flexível
+# - Pode causar erros mais facilmente
+
+# ==============================
+# 4. Concatenação com + (FUNCIONA, mas não é ideal)
+# ==============================
+# Não é exatamente interpolação, mas é comum iniciantes usarem
+
+print("\n--- concatenação (+) ---")
+print("Nome: " + nome + ", Idade: " + str(idade))
+
+# Problemas:
+# - Precisa converter tipos (ex: int -> str)
+# - Código fica menos limpo
+
+# ==============================
+# 5. f-string avançado (uso profissional)
+# ==============================
+print("\n--- f-string avançado ---")
+
+# Alinhamento e espaçamento
+print(f"{nome:<10} | {idade:^5} | {altura:>6.2f}")
+
+# Explicação:
+# < = alinhado à esquerda
+# ^ = centralizado
+# > = alinhado à direita
+
+# ==============================
+# 6. Aplicação prática
+# ==============================
+print("\n--- Aplicação prática ---")
+
+usuario = {
+    "nome": "Maria",
+    "saldo": 1500.5
+}
+
+# Exemplo real: sistema financeiro
+mensagem = f"Cliente {usuario['nome']} possui saldo de R$ {usuario['saldo']:.2f}"
+print(mensagem)
+
+# ==============================
+# Conclusão
+# ==============================
+"""
+Resumo rápido:
+
+✔ Use f-strings (melhor opção hoje)
+✔ format() ainda é útil
+⚠ Evite % (está em desuso)
+⚠ Evite concatenação excessiva
+
+f-strings são padrão em código profissional moderno 🚀
+"""
